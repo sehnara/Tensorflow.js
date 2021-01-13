@@ -26,7 +26,7 @@
  
         // 3. 데이터로 모델을 학습시킵니다. 
         // var fitParam = { epochs: 10000} 
-        var fitParam = { epochs: 100, callbacks:{onEpochEnd:
+        var fitParam = { epochs: 6000, callbacks:{onEpochEnd:
             function(epoch, logs){
                 console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss));
                 }
