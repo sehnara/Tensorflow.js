@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
+    <body>    
+
+    <img id="img" src="2.jpg"/>
+    <h1 class="name"></h1>
+    <script>
+    const img = document.getElementById('img');
+    cocoSsd.load().then(model => {
+        model.detect(img).then(predictions => {
+        console.log('Predictions: ', predictions);
+        predictions.forEach(element => {
+            const name = document.querySelector('.name');
+            name.innerHTML = element.class + " / 일치율 : " + Math.floor(element.score*100);
+        });
+        
+        
+        });
+    });
+</script>
+    </body>
+</html>
